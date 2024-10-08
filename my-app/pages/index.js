@@ -1,11 +1,16 @@
 import React from 'react'
 
+import NavBar from '@/components/NavBar'
+import ImageIda from '@/components/ImageIda'
+
 const index = () => {
   return (
-    <div>
-        <h1>HEJ</h1>
-      
-    </div>
+    <main>
+        <header>
+            <h1>IDA GRUFMAN JOHANSSON</h1>
+        </header>
+        <NavBar />
+    </main>
   )
 }
 
