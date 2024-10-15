@@ -8,9 +8,9 @@ const NavBar = () => {
   return (
     <div className={styles.nav}>
       <ul className={styles.nav__list}>
-      <li className={styles.nav__li}>
-          <Link className={styles.nav__link} href="/about">
-            About me
+        <li className={styles.nav__li}>
+          <Link className={styles.nav__link} href="/">
+            Ida
           </Link>
         </li>
         <li className={styles.nav__li}>
