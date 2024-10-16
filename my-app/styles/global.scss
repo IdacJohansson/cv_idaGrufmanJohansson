@@ -1,46 +1,59 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
-@import '../styles/variables.module.scss'; 
+@import "../styles/variables.module.scss";
+@import "~bootstrap/scss/bootstrap";
 
-
-body {
-  max-width: 200vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+* {
   font-family: $primary-font;
-  background-color: $background-color;
 }
 
-main{
+body {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 1000px;
+  background-color: $background-color;
+  border: red solid;
+}
+
+main {
   width: 100%;
-  min-height: 510px;
-  height: 100%;
-  margin: 20px;
-  border: green solid; 
+  border: green solid;
+}
+
+// Navigation constum hoover
+
+.custom-link {
+  color: $font-color;
+  &:hover {
+    color: $link-color;
+    opacity: 0.8;
+  }
+}
+
+.costum-icon-color {
+  background-color: $link-color;
 }
 
 // Index & contact
 
-header{
-  display: flex;
-  justify-content: center;
-  min-width: 500px;
-  width: 100%;
+.heading {
+  color: $font-color;
+  font-size: 32px;
+  margin: 5px;
 }
 
-h1{
-color: $font-color;
-font-size: 32px;
-margin: 5px;
+.animate__animated.animate__fadeIn {
+  --animate-duration: 3s;
 }
 
-ul{
-  
+// Experience
+
+.list {
+  list-style: none;
+  color: $font-color;
+  &__languages {
+    font-family: $primary-font;
+  }
 }

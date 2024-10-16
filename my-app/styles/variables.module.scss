@@ -3,11 +3,19 @@
 
 $font-color: #BFC3BA;
 $background-color: #000;
+$link-color: #EBBAB9; 
+$border-color: #666B6A;
 
 $primary-font: "Poppins", sans-serif;
 $menu-font: "Dancing Script", cursive; 
 
-$test: #F5E663;
+.bg-black {
+  background-color: $background-color !important;
+}
+
+.text-gray {
+  color: $font-color!important;
+}
  
 // använd direkt i style={{}}
 :export {
@@ -15,5 +23,6 @@ $test: #F5E663;
   fontColor: $font-color; 
   primaryFont: $primary-font; 
   menuFont: $menu-font; 
-  testColor: $test; 
+  link-color: $link-color;
+  frame-color: $border-color; 
 }

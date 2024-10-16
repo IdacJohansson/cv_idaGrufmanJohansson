@@ -1,35 +1,28 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
 
-import variables from "../styles/variables.module.scss";
-import styles from "../components/navBar.module.scss";
+import { Container } from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
+
+
 
 const NavBar = () => {
   return (
-    <div className={styles.nav}>
-      <ul className={styles.nav__list}>
-        <li className={styles.nav__li}>
-          <Link className={styles.nav__link} href="/">
-            Ida
-          </Link>
-        </li>
-        <li className={styles.nav__li}>
-          <Link className={styles.nav__link} href="/experience">
-            Experience
-          </Link>
-        </li>
-        <li className={styles.nav__li}>
-          <Link className={styles.nav__link} href="/contact">
-            Contact
-          </Link>
-        </li>
-        <li className={styles.nav__li}>
-          <Link className={styles.nav__link} href="/contact">
-            GitHub
-          </Link>
-        </li>
-      </ul>
-    </div>
+     <Navbar expand='lg' className='bg-black'>
+      <Container className='container' style={{ maxWidth: '600px' }}>
+        <Navbar.Toggle className='costum-icon-color' aria-controls='basic-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav className='mx-auto'>
+            <Nav.Link className='custom-link' href='/'>Ida</Nav.Link>
+            <Nav.Link className='custom-link'  href='/experience'>Experience</Nav.Link>
+            <Nav.Link className='custom-link' href='/contact'>Contact</Nav.Link>
+            <Nav.Link className='custom-link'  href='https://github.com/IdacJohansson'>GitHub</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    
   );
 };
 
