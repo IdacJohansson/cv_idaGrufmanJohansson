@@ -9,7 +9,7 @@ import Nav from 'react-bootstrap/Nav';
 
 const NavBar = () => {
   return (
-     <Navbar expand='lg' className='bg-black'>
+     <Navbar expand='lg'>
       <Container className='container' style={{ maxWidth: '600px' }}>
         <Navbar.Toggle className='costum-icon-color' aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>

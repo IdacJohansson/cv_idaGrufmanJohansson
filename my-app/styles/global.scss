@@ -4,56 +4,117 @@
 @import "~bootstrap/scss/bootstrap";
 
 * {
-  font-family: $primary-font;
+  font-family: $libre-font;
 }
 
 body {
   height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: $background-color;
+  background: linear-gradient(to right, black 50%, white 50%);
   border: red solid;
 }
 
 main {
+  margin-top: 10px;
   width: 100%;
-  border: green solid;
+  border: solid linear-gradient(to right, white 50%, black 50%);
 }
 
 // Navigation constum hoover
 
 .custom-link {
-  color: $font-color;
+  color: $color-white;
+  font-family: $thinMan-font;
   &:hover {
     color: $link-color;
     opacity: 0.8;
   }
 }
-
 .costum-icon-color {
   background-color: $link-color;
 }
 
-// Index & contact
+// General
 
-.heading {
-  color: $font-color;
-  font-size: 32px;
-  margin: 5px;
+.text-container {
+  padding: 20px;
+  width: 500px;
+  background: $background-color;
+  border: solid $color-white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .animate__animated.animate__fadeIn {
   --animate-duration: 3s;
 }
 
+.card-style {
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: solid $color-black;
+}
+
+.container-size {
+  width: 1000px;
+}
+
+// Index
+
+.heading {
+  width: 300px;
+  color: $color-white;
+  font-size: 72px;
+  font-family: $thinMan-font;
+}
+
+.heading-lg {
+  font-size: 100px;
+  font-family: $thinMan-font;
+}
+
+.img-style {
+  border-bottom: solid $color-white;
+}
+
+%general-style {
+  font-family: $thinMan-font;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.title-previous-experience {
+  margin-top: 0px;
+  @extend %general-style;
+}
+
+.title-about-me {
+  @extend %general-style;
+}
+
 // Experience
 
 .list {
   list-style: none;
-  color: $font-color;
-  &__languages {
-    font-family: $primary-font;
-  }
+  color: $color-black;
+}
+
+.titel-experience {
+  @extend %general-style;
+}
+
+.body-size {
+  width: 800px;
+}
+
+// contact & ecperience
+
+.second-heading {
+  width: 500px;
+  color: $color-white;
+  font-size: 72px;
+  font-family: $thinMan-font;
 }
