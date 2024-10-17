@@ -8,9 +8,9 @@ const ImageIda = () => {
     <Image
       src={imageIda}
       width={400}
-      height={500}
+      height={600}
       alt="Picture of Ida"
-      className="img-fluid animate__animated animate__fadeIn"
+      className="img-fluid img-style"
     />
   );
 };
