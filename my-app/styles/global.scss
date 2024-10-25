@@ -84,6 +84,7 @@ main {
   font-family: $thinMan-font;
   font-size: 25px;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .title-previous-experience {
@@ -106,8 +107,22 @@ main {
   @extend %general-style;
 }
 
-.body-size {
-  width: 800px;
+.sub-title {
+  font-size: 20px;
+}
+
+@media (max-width: 576px) {
+  .card-style {
+    padding: 10px;
+  }
+
+  .titel-experience {
+    font-size: 18px;
+  }
+
+  .list {
+    font-size: 14px;
+  }
 }
 
 // contact & ecperience

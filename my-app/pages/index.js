@@ -7,7 +7,19 @@ import Card from "react-bootstrap/Card";
 import NavBar from "@/components/NavBar";
 import ImageIda from "@/components/ImageIda";
 
-const index = () => {
+export async function getServerSideProps() {
+  const res = await fetch(`${process.env.DEVELOPMENT_API_URL}/api/ida`);
+  const data = await res.json();
+
+  return {
+    props: {
+      ida: data.ida,
+      frontendEducation: data.frontendEducation,
+    },
+  };
+}
+
+const index = (ida, frontendEducation) => {
   return (
     <main className="d-flex flex-column justify-content-center align-items-center mt-5">
       <div className="d-flex flex-row justify-content-center align-items-center">
@@ -41,9 +53,7 @@ const index = () => {
       <Card className="container container-size card-style mt-5 mb-5">
         <Card.Body>
           <div className="row">
-            {" "}
             <div className="col d-flex flex-column">
-              {" "}
               {/* Första kolumnen */}
               <Card.Title className="title-about-me">About me</Card.Title>
               <Card.Text>
