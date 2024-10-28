@@ -54,119 +54,153 @@ const ExperiencePage = ({ experience, educationById }) => {
       </div>
 
       <Card className="container-fluid container-size card-style d-flex flex-column justify-content-center align-items-center mt-5">
-        <Card.Body className="w-100">
+        <Card.Body className="col-12 col-md-10">
           {/* Work experience */}
+
           <Card.Title className="titel-experience d-flex justify-content-center align-items-center">
             Work experience
           </Card.Title>
           <Row className="justify-content-center align-items-center mb-3">
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title>Title:</Card.Title>
+            <Col md={4} sm={4} xs={4} className="mb-3">
+              <Card.Title className="sub-title">Title:</Card.Title>
               {experience.employment.map((item) => (
-                <Card.Text key={item.id}>{item.job_title}</Card.Text>
+                <Card.Text className="card-text" key={item.id}>
+                  {item.job_title}
+                </Card.Text>
               ))}
             </Col>
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title>Company:</Card.Title>
+            <Col md={4} sm={5} xs={5} className="mb-3">
+              <Card.Title className="sub-title">Company:</Card.Title>
               {experience.employment.map((item) => (
-                <Card.Text key={item.id}>{item.company}</Card.Text>
+                <Card.Text className="card-text" key={item.id}>
+                  {item.company}
+                </Card.Text>
               ))}
             </Col>
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title>Period:</Card.Title>
+            <Col md={3} sm={3} xs={3} className="mb-3">
+              <Card.Title className="sub-title">Period:</Card.Title>
               {experience.employment.map((item) => (
-                <Card.Text key={item.id}>
+                <Card.Text className="card-text" key={item.id}>
                   {item.start_year}-{item.end_year}
                 </Card.Text>
               ))}
             </Col>
           </Row>
         </Card.Body>
-
-        {/* Education */}
-        <Card.Body className="w-100">
-          <Card.Title className="titel-experience">Education</Card.Title>
-          <Row className="justify-content-center align-items-center mb-3">
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title className="">Degree:</Card.Title>
-              {experience.education.map((item) => (
-                <Card.Text key={item.id}>{item.degree}</Card.Text>
-              ))}
-            </Col>
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title>Institution:</Card.Title>
-              {experience.education.map((item) => (
-                <Card.Text key={item.id}>{item.institution}</Card.Text>
-              ))}
-            </Col>
-            <Col md={2} sm={6} className="mb-3">
-              <Card.Title>City:</Card.Title>
-              {experience.education.map((item) => (
-                <Card.Text key={item.id}>{item.city}</Card.Text>
-              ))}
-            </Col>
-            <Col md={2} sm={6} className="mb-3">
-              <Card.Title>Period:</Card.Title>
-              {experience.education.map((item) => (
-                <Card.Text key={item.id}>
-                  {item.start_year}-{item.end_year}
-                </Card.Text>
-              ))}
-            </Col>
-          </Row>
-        </Card.Body>
-
-        <Card.Body className="w-100">
-          <Card.Title className="titel-experience">
+        <div className="title-underline"></div>
+        {/* Development experience */}
+        <Card.Body className="col-12 col-md-10">
+          <Card.Title className="titel-experience d-flex justify-content-center align-items-center">
             Development experience
           </Card.Title>
-          <Row className="mb-3">
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title className="">Company:</Card.Title>
-              {experience.developmentExperience.map((item) => (
-                <Card.Text key={item.id}>{item.lia}</Card.Text>
-              ))}
+          <Row className="justify-content-center align-items-center ">
+            <Col md={4} xs={3} className="mb-3">
+              <Card.Title className="sub-title">Title:</Card.Title>
             </Col>
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title>Title:</Card.Title>
-              {experience.developmentExperience.map((item) => (
-                <Card.Text key={item.id}>{item.title}</Card.Text>
-              ))}
+            <Col md={4} xs={5} className="mb-3">
+              <Card.Title className="sub-title">Company:</Card.Title>
             </Col>
-            <Col md={2} sm={6} className="mb-3">
-              <Card.Title>Period:</Card.Title>
-              {experience.developmentExperience.map((item) => (
-                <Card.Text key={item.id}>
+            <Col md={3} xs={4} className="mb-3">
+              <Card.Title className="sub-title">Period:</Card.Title>
+            </Col>
+          </Row>
+          {experience.developmentExperience.map((item) => (
+            <Row
+              key={item.id}
+              className="justify-content-center align-items-center mb-3 "
+            >
+              <Col md={4} xs={3} className="mb-3">
+                <Card.Text className="card-text-xs">{item.title}</Card.Text>
+              </Col>
+              <Col md={4} xs={5} className="mb-3">
+                <Card.Text className="card-text-xs">{item.lia}</Card.Text>
+              </Col>
+              <Col md={3} xs={4} className="mb-3">
+                <Card.Text className="card-text-xs">
                   {item.start_year}-{item.end_year}
+                </Card.Text>
+              </Col>
+            </Row>
+          ))}
+        </Card.Body>
+        <div className="title-underline"></div>
+
+        {/* Technical Skills */}
+        <Card.Body className="col-12 col-md-10">
+          <Card.Title className="titel-experience d-flex justify-content-center align-items-center">
+            Technical skills
+          </Card.Title>
+          <Row className="justify-content-center align-items-center">
+            <Col md={4} sm={3} xs={4} className="mb-3">
+              <Card.Title className="sub-title">Type:</Card.Title>
+              {experience.technicalSkills.map((item) => (
+                <Card.Text className="card-text" key={item.id}>
+                  {item.skill_type}
+                </Card.Text>
+              ))}
+            </Col>
+            <Col md={4} sm={4} xs={5} className="mb-3">
+              <Card.Title className="sub-title">Name:</Card.Title>
+              {experience.technicalSkills.map((item) => (
+                <Card.Text className="card-text" key={item.id}>
+                  {item.skill_name}
+                </Card.Text>
+              ))}
+            </Col>
+            <Col md={3} sm={3} xs={3} className="mb-3">
+              <Card.Title className="sub-title">Level:</Card.Title>
+              {experience.technicalSkills.map((item) => (
+                <Card.Text className="card-text" key={item.id}>
+                  {item.level_of_experience}
                 </Card.Text>
               ))}
             </Col>
           </Row>
         </Card.Body>
+        <div className="title-underline"></div>
 
-        {/* Technical Skills */}
-        <Card.Body className="w-100">
-          <Card.Title className="titel-experience">Technical skills</Card.Title>
-          <Row className="d-flex">
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title className="sub-title">Type:</Card.Title>
-              {experience.technicalSkills.map((item) => (
-                <Card.Text key={item.id}>{item.skill_type}</Card.Text>
-              ))}
+        {/* Education */}
+        <Card.Body className="col-12 col-md-10">
+          <Card.Title className="titel-experience d-flex justify-content-center align-items-center">
+            Education
+          </Card.Title>
+          <Row className="justify-content-center align-items-center ">
+            <Col md={4} xs={3} className="mb-3">
+              <Card.Title className="sub-title">Degree:</Card.Title>
             </Col>
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title>Name:</Card.Title>
-              {experience.technicalSkills.map((item) => (
-                <Card.Text key={item.id}>{item.skill_name}</Card.Text>
-              ))}
+            <Col md={4} xs={3} className="mb-3">
+              <Card.Title className="sub-title">Institution:</Card.Title>
             </Col>
-            <Col md={3} sm={6} className="mb-3">
-              <Card.Title>Level of Experience:</Card.Title>
-              {experience.technicalSkills.map((item) => (
-                <Card.Text key={item.id}>{item.level_of_experience}</Card.Text>
-              ))}
+            <Col md={2} xs={3} className="mb-3">
+              <Card.Title className="sub-title">City:</Card.Title>
+            </Col>
+            <Col md={2} xs={3} className="mb-3">
+              <Card.Title className="sub-title">Period:</Card.Title>
             </Col>
           </Row>
+          {experience.education.map((item) => (
+            <Row
+              key={item.id}
+              className="justify-content-center align-items-center mb-3 "
+            >
+              <Col md={4} xs={3} className="mb-3">
+                <Card.Text className="card-text-xs">{item.degree}</Card.Text>
+              </Col>
+              <Col md={4} xs={3} className="mb-3">
+                <Card.Text className="card-text-xs">
+                  {item.institution}
+                </Card.Text>
+              </Col>
+              <Col md={2} xs={3} className="mb-3">
+                <Card.Text className="card-text-xs">{item.city}</Card.Text>
+              </Col>
+              <Col md={2} xs={3} className="mb-3">
+                <Card.Text className="card-text-xs">
+                  {item.start_year}-{item.end_year}
+                </Card.Text>
+              </Col>
+            </Row>
+          ))}
         </Card.Body>
       </Card>
     </main>
