@@ -8,13 +8,13 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: linear-gradient(to right, black 50%, white 50%);
+  background-repeat: no-repeat;
   border: red solid;
 }
 
@@ -22,6 +22,7 @@ main {
   margin-top: 10px;
   width: 100%;
   border: solid linear-gradient(to right, white 50%, black 50%);
+  border: green solid;
 }
 
 // Navigation constum hoover
@@ -46,6 +47,16 @@ main {
   background: $background-color;
   border: solid $color-white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  /* Tablet*/
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+    width: 400px;
+  }
+  /* Mobile */
+  @media screen and (max-width: 480px) {
+    padding: 20px;
+    width: 300px;
+  }
 }
 
 .animate__animated.animate__fadeIn {
@@ -59,7 +70,15 @@ main {
 }
 
 .container-size {
-  width: 1000px;
+  width: 800px;
+  /* Tablet*/
+  @media screen and (max-width: 768px) {
+    width: 600px;
+  }
+  /* Mobile */
+  @media screen and (max-width: 480px) {
+    width: 400px;
+  }
 }
 
 // Index
@@ -98,32 +117,55 @@ main {
 
 // Experience
 
-.list {
-  list-style: none;
-  color: $color-black;
-}
-
 .titel-experience {
   @extend %general-style;
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
+}
+
+.title-underline{
+  background-color: $link-color;
+  height: 2px;
+  width: 600px;
+  margin-bottom: 20px;
+  opacity: 0.70;
+  @media screen and (max-width: 480px) {
+    width: 300px;
+  }
 }
 
 .sub-title {
-  font-size: 20px;
-}
-
-@media (max-width: 576px) {
-  .card-style {
-    padding: 10px;
-  }
-
-  .titel-experience {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 500px;
+  @media screen and (max-width: 768px) {
     font-size: 18px;
   }
-
-  .list {
+  @media screen and (max-width: 480px) {
     font-size: 14px;
   }
 }
+
+.card-text {
+  font-size: 17px;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 13px;
+  }
+}
+.card-text-xs{
+  font-size: 17px;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
 
 // contact & ecperience
 
@@ -132,4 +174,13 @@ main {
   color: $color-white;
   font-size: 72px;
   font-family: $thinMan-font;
+  /* Tablet*/
+  @media screen and (max-width: 768px) {
+    font-size: 62px;
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 480px) {
+    font-size: 42px;
+  }
 }
