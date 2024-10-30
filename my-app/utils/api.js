@@ -11,3 +11,15 @@ export async function fetchEducationById(id) {
   if (!res.ok) throw new Error("Failed to fetch education data");
   return await res.json();
 }
+
+export async function fetchAbout() {
+  const res = await fetch (`${process.env.DEVELOPMENT_API_URL}/api/about`);
+  if (!res.ok) throw new Error("Failed to fetch about data");
+  return await res.json();
+}
+
+export async function fetchToday() {
+  const res = await fetch (`${process.env.DEVELOPMENT_API_URL}/api/today`);
+  if (!res.ok) throw new Error("Failed to fetch today data");
+  return await res.json();
+}
