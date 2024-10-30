@@ -4,19 +4,17 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "animate.css";
-import NavBar from "@/components/NavBar";
+import Header from "@/components/Header";
 
-import { fetchExperience, fetchEducationById } from "../utils/api";
+import { fetchExperience } from "../utils/api";
 
 export async function getServerSideProps() {
   try {
     const dataExperience = await fetchExperience();
-    const dataEducation = await fetchEducationById(1);
 
     return {
       props: {
         experience: dataExperience,
-        educationById: dataEducation,
       },
     };
   } catch (error) {
@@ -24,39 +22,20 @@ export async function getServerSideProps() {
     return {
       props: {
         experience: null,
-        educationById: null,
         error: "Data could not be fetched.",
       },
     };
   }
 }
 
-const ExperiencePage = ({ experience, educationById }) => {
+const ExperiencePage = ({ experience }) => {
   return (
     <main className="d-flex flex-column justify-content-center align-items-center mt-5">
-      <div className="text-container d-flex flex-column justify-content-center align-items-center">
-        <div className="d-flex flex-row justify-content-end w-100 ">
-          <a href="">
-            <i className="bi bi-facebook"></i>
-          </a>
-          <a href="">
-            <i className="bi bi-linkedin p-3"></i>
-          </a>
-        </div>
-        <div className="mb-3 text-center">
-          <h1 className="second-heading animate__animated animate__fadeIn word-wrap">
-            Experience
-          </h1>
-        </div>
-        <div className="d-flex justify-content-center">
-          <NavBar />
-        </div>
-      </div>
+      <Header title="Experience" />
 
-      <Card className="container-fluid container-size card-style d-flex flex-column justify-content-center align-items-center mt-5">
+      <Card className="container-fluid container-size card-style d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
         <Card.Body className="col-12 col-md-10">
           {/* Work experience */}
-
           <Card.Title className="titel-experience d-flex justify-content-center align-items-center">
             Work experience
           </Card.Title>
@@ -124,7 +103,6 @@ const ExperiencePage = ({ experience, educationById }) => {
           ))}
         </Card.Body>
         <div className="title-underline"></div>
-
         {/* Technical Skills */}
         <Card.Body className="col-12 col-md-10">
           <Card.Title className="titel-experience d-flex justify-content-center align-items-center">
@@ -158,7 +136,6 @@ const ExperiencePage = ({ experience, educationById }) => {
           </Row>
         </Card.Body>
         <div className="title-underline"></div>
-
         {/* Education */}
         <Card.Body className="col-12 col-md-10">
           <Card.Title className="titel-experience d-flex justify-content-center align-items-center">

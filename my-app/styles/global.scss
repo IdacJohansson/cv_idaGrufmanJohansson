@@ -15,14 +15,12 @@ body {
   justify-content: center;
   background: linear-gradient(to right, black 50%, white 50%);
   background-repeat: no-repeat;
-  border: red solid;
 }
 
 main {
   margin-top: 10px;
   width: 100%;
   border: solid linear-gradient(to right, white 50%, black 50%);
-  border: green solid;
 }
 
 // Navigation constum hoover
@@ -88,15 +86,27 @@ main {
   color: $color-white;
   font-size: 72px;
   font-family: $thinMan-font;
+  /* Mobile */
+  @media screen and (max-width: 480px) {
+    font-size: 42px;
+  }
 }
 
 .heading-lg {
   font-size: 100px;
   font-family: $thinMan-font;
+   /* Mobile */
+   @media screen and (max-width: 480px) {
+    font-size: 42px;
+  }
 }
 
 .img-style {
   border-bottom: solid $color-white;
+   /* Mobile */
+   @media screen and (max-width: 480px) {
+    display: none;
+  }
 }
 
 %general-style {
@@ -109,6 +119,9 @@ main {
 .title-previous-experience {
   margin-top: 0px;
   @extend %general-style;
+  @media screen and (max-width: 768px) {
+    margin-top: 10px;
+  }
 }
 
 .title-about-me {

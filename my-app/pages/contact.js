@@ -1,43 +1,38 @@
 import React from "react";
-import "animate.css";
 
 import Card from "react-bootstrap/Card";
-import NavBar from "@/components/NavBar";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "animate.css";
+import Header from "@/components/Header";
 
-const contact = () => {
+const ContactPage = () => {
+  const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER;
+  const email = process.env.NEXT_PUBLIC_EMAIL_ADDRESS;
+
   return (
     <main className="d-flex flex-column justify-content-center align-items-center mt-5">
-      <div className="text-container d-flex flex-column justify-content-center align-items-center">
-        <div className="d-flex flex-row justify-content-end w-100 ">
-          <a href="">
-            <i className="bi bi-facebook"></i>
-          </a>
-          <a href="">
-            <i className="bi bi-linkedin p-2"></i>
-          </a>
-        </div>
-        <div className="mb-4 text-center">
-          <h1 className="second-heading animate__animated animate__fadeIn word-wrap">
-            Contact me
-          </h1>
-        </div>
-        <div className="d-flex justify-content-center">
-          <NavBar />
-        </div>
-      </div>
+      <Header title="Contact" />
 
-      {/* Card */}
-      <Card className="content-container card-style d-flex flex-column justify-content-center align-items-center mt-5">
-        <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
-          <Card.Text>
-            With supporting text below as a natural lead-in to additional
-            content.
-          </Card.Text>
+      <Card className="container-fluid container-size card-style d-flex flex-column justify-content-center align-items-center mt-5">
+        <Card.Body className="col-12 col-md-10">
+          <Card.Title className="titel-experience d-flex justify-content-center align-items-center mt-5">
+            Contact me
+          </Card.Title>
+          <Row className="justify-content-center align-items-center text-center mb-5">
+            <Col md={4} sm={4} xs={4} className="mb-3">
+              <Card.Title className="sub-title">Phone:</Card.Title>
+              <Card.Text className="card-text">{phone}</Card.Text>
+            </Col>
+            <Col md={4} sm={4} xs={4} className="mb-3 text-center">
+              <Card.Title className="sub-title">Email:</Card.Title>
+              <Card.Text className="card-text">{email}</Card.Text>
+            </Col>
+          </Row>
         </Card.Body>
       </Card>
     </main>
   );
 };
 
-export default contact;
+export default ContactPage;
