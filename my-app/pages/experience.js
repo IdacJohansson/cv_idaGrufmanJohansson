@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "animate.css";
-import variables from "../styles/variables.module.scss";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Header from "@/components/Header";
 
@@ -33,8 +32,8 @@ export async function getServerSideProps() {
 const ExperiencePage = ({ experience }) => {
   const levelProgressMap = {
     Advanced: 100,
-    Intermediate: 50,
-    Beginner: 30,
+    Intermediate: 70,
+    Beginner: 40,
   };
 
   return (
@@ -128,11 +127,11 @@ const ExperiencePage = ({ experience }) => {
               <Col md={4} sm={5} xs={5} className="mb-3">
                 <Card.Text className="card-text">{item.skill_name}</Card.Text>
               </Col>
-              <Col md={5} sm={6} xs={6} className="mb-3">
+              <Col md={5} sm={3} xs={2} className="mb-3">
                 <ProgressBar
                   now={levelProgressMap[item.level_of_experience] || 0}
                   style={{ width: "100%" }}
-                  color={variables.backgroundColor}
+                  variant="info"
                 />
               </Col>
             </Row>
