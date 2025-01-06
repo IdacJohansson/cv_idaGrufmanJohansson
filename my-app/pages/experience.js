@@ -3,9 +3,13 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import CardGroup from "react-bootstrap/CardGroup";
+
 import "animate.css";
+
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Header from "@/components/Header";
+import TestImage from "@/components/TestImage";
 
 import { fetchExperience } from "../utils/api";
 
@@ -182,6 +186,64 @@ const ExperiencePage = ({ experience }) => {
             </Row>
           ))}
         </Card.Body>
+        <div className="title-underline"></div>
+        {/* Projects */}
+        <Card.Title className="titel-experience d-flex justify-content-center align-items-center mb-5">
+          Projects
+        </Card.Title>
+        <CardGroup className="mb-5">
+          {/* Project 1 */}
+          <Card>
+            <TestImage />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This card has supporting text below as a natural lead-in to
+                additional content.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <Card.Link className="icon-link icon-link-hover mt-2" href="#">
+                See project
+                <i className="bi bi-arrow-right"></i>
+              </Card.Link>
+            </Card.Footer>
+          </Card>
+          {/* Project 2 */}
+          <Card>
+            <TestImage />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This card has supporting text below as a natural lead-in to
+                additional content.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <Card.Link className="icon-link icon-link-hover mt-2" href="#">
+                See project
+                <i className="bi bi-arrow-right"></i>
+              </Card.Link>
+            </Card.Footer>
+          </Card>
+          {/* Project 3 */}
+          <Card>
+            <TestImage />
+            <Card.Body>
+              <Card.Title>Card title</Card.Title>
+              <Card.Text>
+                This card has supporting text below as a natural lead-in to
+                additional content.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <Card.Link className="icon-link icon-link-hover mt-2" href="#">
+                See project
+                <i className="bi bi-arrow-right"></i>
+              </Card.Link>
+            </Card.Footer>
+          </Card>
+        </CardGroup>
       </Card>
     </main>
   );
