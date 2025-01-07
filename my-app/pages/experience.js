@@ -9,7 +9,10 @@ import "animate.css";
 
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Header from "@/components/Header";
-import TestImage from "@/components/TestImage";
+
+import PatagoniaImage from "@/components/PatagoniaImage";
+import GenesisImage from "@/components/GenesisImage";
+import NavigationImage from "@/components/NavigationImage";
 
 import { fetchExperience } from "../utils/api";
 
@@ -194,51 +197,61 @@ const ExperiencePage = ({ experience }) => {
         <CardGroup className="mb-5">
           {/* Project 1 */}
           <Card>
-            <TestImage />
+            <NavigationImage />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Responsive navigation</Card.Title>
               <Card.Text>
-                This card has supporting text below as a natural lead-in to
-                additional content.
+                This project demonstrates a responsive navigation optimized for
+                various screen sizes and devices. Styled with Sass.
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Card.Link className="icon-link icon-link-hover mt-2" href="#">
-                See project
+              <Card.Link
+                className="icon-link icon-link-hover mt-2"
+                href="https://jazzy-figolla-b35532.netlify.app/"
+              >
+                View website!
                 <i className="bi bi-arrow-right"></i>
               </Card.Link>
             </Card.Footer>
           </Card>
           {/* Project 2 */}
           <Card>
-            <TestImage />
+            <GenesisImage />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Cross-browser compability</Card.Title>
               <Card.Text>
-                This card has supporting text below as a natural lead-in to
-                additional content.
+                This is a cross-browser compability project providing a seamless
+                experience to users accessing websites from various browsers,
+                including Chrome, Firefox, Safari, and Edge. Styled with Sass.
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Card.Link className="icon-link icon-link-hover mt-2" href="#">
-                See project
+              <Card.Link
+                className="icon-link icon-link-hover mt-2"
+                href="https://genesis-tfw.netlify.app/"
+              >
+                View website!
                 <i className="bi bi-arrow-right"></i>
               </Card.Link>
             </Card.Footer>
           </Card>
           {/* Project 3 */}
           <Card>
-            <TestImage />
+            <PatagoniaImage />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Responsive design</Card.Title>
               <Card.Text>
-                This card has supporting text below as a natural lead-in to
-                additional content.
+                This project demonstrates a responsive design optimized for
+                various screen sizes and devices. Styled with Sass.
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Card.Link className="icon-link icon-link-hover mt-2" href="#">
-                See project
+              <Card.Link
+                className="icon-link icon-link-hover mt-2"
+                href="https://idyllic-manatee-74b27d.netlify.app/"
+              >
+                View website!
                 <i className="bi bi-arrow-right"></i>
               </Card.Link>
             </Card.Footer>
